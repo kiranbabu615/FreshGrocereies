@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6fbf5">
+  <title>FreshCart — Groceries made fresh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="topline"> <span>✦</span> Fresh picks, fair prices <span class="top-dot">•</span> Free delivery on orders above ₹499</div>
+  <header class="header">
+    <a class="brand" href="#home"><span class="brand-mark">f</span><span>fresh<span class="brand-green">cart</span><small>GOOD FOOD. GOOD MOOD.</small></span></a>
+    <div class="delivery"><span class="pin">⌖</span><span><small>DELIVERING TO</small><strong>Hyderabad, 500001</strong></span><span class="chevron">⌄</span></div>
+    <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search for fruits, milk, snacks..."><kbd>⌘ K</kbd></label>
+    <button class="account" aria-label="Account">♙ <span>Account</span></button>
+    <button class="cart-button" id="openCart"><span>🛒</span><span>My cart</span><b id="cartCount">0</b></button>
+  </header>
+  <nav class="nav"><a class="active" href="#home">Home</a><a href="#shop">Shop all</a><a href="#shop" data-category-link="Fruits">Fruits & vegetables</a><a href="#shop" data-category-link="Dairy">Dairy & eggs</a><a href="#shop" data-category-link="Bakery">Bakery</a><a href="#shop" data-category-link="Snacks">Snacks</a><span class="nav-promo"> <span>✳</span> Fresh deals every day</span></nav>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span></span> YOUR DAILY DOSE OF FRESHNESS</div><h1>Good food.<br><em>Good life.</em></h1><p>Farm-fresh groceries and everyday essentials, delivered right to your doorstep.</p><div class="hero-actions"><a href="#shop" class="primary">Shop groceries <span>→</span></a><div class="delivery-note"><span>✓</span> Freshness you can trust</div></div><div class="hero-stats"><div><strong>10k+</strong><small>Happy customers</small></div><i></i><div><strong>500+</strong><small>Fresh products</small></div><i></i><div><strong>30 min</strong><small>Quick delivery*</small></div></div></div>
+      <div class="hero-art"><div class="sun"></div><div class="hero-tag tag-one">✦ Picked fresh</div><div class="hero-tag tag-two">100% goodness</div><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1000&auto=format&fit=crop&q=85" alt="Colorful fresh vegetables and groceries"><div class="art-caption"><span>THE FRESH EDIT</span><strong>Nature's best,<br>at your table.</strong></div></div>
+    </section>
+
+    <section class="benefits"><div><span class="benefit-icon">♧</span><span><strong>Farm fresh</strong><small>Picked with care</small></span></div><div><span class="benefit-icon">♧</span><span><strong>Quality assured</strong><small>Only the good stuff</small></span></div><div><span class="benefit-icon">◷</span><span><strong>Quick delivery</strong><small>At your convenience</small></span></div><div><span class="benefit-icon">♡</span><span><strong>Easy returns</strong><small>Shop worry-free</small></span></div></section>
+
+    <section class="shop-section" id="shop"><div class="section-heading"><div><div class="eyebrow">A LITTLE FRESHNESS GOES A LONG WAY</div><h2>Shop by <em>category</em></h2></div><a href="#products" class="text-link">View all products <span>→</span></a></div>
+      <div class="categories" id="categories">
+        <button class="category selected" data-category="All"><span class="category-emoji all-emoji">✳</span><strong>All items</strong><small>Everything fresh</small></button>
+        <button class="category" data-category="Fruits"><span class="category-emoji">🍊</span><strong>Fruits</strong><small>Nature's candy</small></button>
+        <button class="category" data-category="Vegetables"><span class="category-emoji">🥑</span><strong>Vegetables</strong><small>Garden goodness</small></button>
+        <button class="category" data-category="Dairy"><span class="category-emoji">🥛</span><strong>Dairy & eggs</strong><small>Daily essentials</small></button>
+        <button class="category" data-category="Bakery"><span class="category-emoji">🥐</span><strong>Bakery</strong><small>Baked with love</small></button>
+        <button class="category" data-category="Snacks"><span class="category-emoji">🥜</span><strong>Snacks</strong><small>Little treats</small></button>
+      </div>
+    </section>
+
+    <section class="products-section" id="products"><div class="section-heading product-heading"><div><div class="eyebrow">HANDPICKED FOR YOUR HOME</div><h2>Fresh <em>favourites</em></h2></div><div class="product-tools"><span id="resultCount">8 products</span><select id="sortSelect" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option></select></div></div><div class="product-grid" id="productGrid"></div></section>
+    <section class="bottom-banner"><div><span class="eyebrow">A FRESHER WAY TO SHOP</span><h2>Make room for<br><em>the good stuff.</em></h2><p>Your fridge called. It's ready for a refresh.</p><a href="#shop" class="primary">Explore the store <span>→</span></a></div><div class="banner-image"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900&auto=format&fit=crop&q=85" alt="Fresh salad bowl"></div></section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark">f</span><span>fresh<span class="brand-green">cart</span><small>GOOD FOOD. GOOD MOOD.</small></span></a><p>Fresh choices for everyday living.</p><small>© 2026 FreshCart. Demo shopping experience.</small></footer>
+
+  <div class="overlay" id="overlay"></div><aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart"><div class="drawer-head"><div><span class="eyebrow">YOUR BASKET</span><h2>My cart <span id="drawerCount">(0)</span></h2></div><button id="closeCart" class="close-btn" aria-label="Close cart">×</button></div><div id="cartItems" class="cart-items"><div class="empty-cart"><span>🧺</span><h3>Your cart is feeling light</h3><p>Add some fresh favourites to get started.</p></div></div><div class="cart-summary"><div class="summary-line"><span>Subtotal</span><strong id="subtotal">₹0</strong></div><div class="summary-line"><span>Delivery</span><strong id="deliveryFee">₹40</strong></div><div class="summary-line total"><span>Total</span><strong id="total">₹40</strong></div><button class="checkout" id="checkoutBtn">Continue to checkout <span>→</span></button><small>Demo only — checkout and payments are not connected.</small></div></aside>
+  <div class="toast" id="toast">Added to your cart</div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
